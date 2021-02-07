@@ -10,17 +10,17 @@ public class UserRepository {
 
     public List<User> findAll() {
         List<User> users = new ArrayList<>();
-        users.add(new User(1L, "test1", "abcd1234", "test1@gmail.com"));
-        users.add(new User(2L, "test2", "abcd1234", "test2@gmail.com"));
-        users.add(new User(3L, "test3", "abcd1234", "test3@gmail.com"));
-        users.add(new User(4L, "test4", "abcd1234", "test4@gmail.com"));
+        users.add(new User(1L, "test1@gmail.com", "test1", "abcd1234", "01012345678", "1995-01-01", Role.BASIC));
+        users.add(new User(2L, "test2@gmail.com", "test2", "abcd1234", "01042345679", "1995-02-02", Role.VIP));
+        users.add(new User(3L, "test3@gmail.com", "test3", "abcd1234", "01052345670", "1995-03-03", Role.BASIC));
+        users.add(new User(4L, "test4@gmail.com", "test4", "abcd1234", "01062345672", "1995-04-04", Role.VIP));
 
         return users;
     }
 
     public User findById(Long id) {
 
-        return new User(id, "test" + id, "abcd1234", "test" + id + "@gmail.com");
+        return new User(id, "test1@gmail.com", "test1", "abcd1234", "01012345678", "1995-01-01", Role.BASIC);
     }
 
     public void save(UserSaveRequestDto user) {
