@@ -30,4 +30,29 @@ public class UserSaveRequestDto {
     @NotBlank(message = "생년월일을 입력하세요.")
     private String birth;
 
+    private Role role;
+
+    /**
+     * 권한 부여 (BASIC, VIP, ADMIN)
+     * @param role
+     */
+    public void giveRole(Role role) {
+        this.role = role;
+    }
+
+    /**
+     * dto -> entity로 변환
+     * @return
+     */
+    public User toEntity() {
+        return User.builder()
+                .email(email)
+                .username(username)
+                .password(password)
+                .phone(phone)
+                .birth(birth)
+                .role(role)
+                .build();
+    }
 }
+

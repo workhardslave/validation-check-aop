@@ -31,14 +31,14 @@ public class BindingAdvice {
     @Before("execution(* com.example.demo.controller..*ApiController.*(..))")
     void beforeCheck() {
         // request 값 처리 어떻게?
-        HttpServletRequest request = ((ServletRequestAttributes)RequestContextHolder.currentRequestAttributes()).getRequest();
-        System.out.println("전처리 로그 남기기");
+//        HttpServletRequest request = ((ServletRequestAttributes)RequestContextHolder.currentRequestAttributes()).getRequest();
+//        System.out.println("전처리 로그 남기기");
     }
 
     // @After : 함수의 뒤를 제어
     @After("execution(* com.example.demo.controller..*ApiController.*(..))")
     void afterrCheck() {
-        System.out.println("후처리 로그 남기기");
+//        System.out.println("후처리 로그 남기기");
     }
 
     // @Around : 함수의 앞, 뒤 모두 제어
